@@ -1,0 +1,46 @@
+---
+const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+---
+
+<section id="about" class="section-alt py-28 px-5">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="font-mono text-[var(--color-accent)] text-sm mb-3 tracking-wide">// {lang === "es" ? "experiencia" : "experience"}</p>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-5 leading-snug">
+          {lang === "es"
+            ? "Trabajando con creadores de contenido de Minecraft."
+            : "Working with Minecraft content creators."}
+        </h2>
+        <p class="muted leading-relaxed mb-6">
+          {lang === "es"
+            ? "Colaboracion directa con YouTubers como Chifruit (200K+ subs). Thumbnails que generan views, no decoracion."
+            : "Direct collaboration with YouTubers like Chifruit (200K+ subs). Thumbnails that drive views, not decoration."}
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag px-3 py-1.5 rounded text-xs font-mono">Minecraft</span>
+          <span class="tag px-3 py-1.5 rounded text-xs font-mono">YouTube</span>
+          <span class="tag px-3 py-1.5 rounded text-xs font-mono">CTR</span>
+          <span class="tag px-3 py-1.5 rounded text-xs font-mono">Photoshop</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="card bg-[var(--color-surface-dark)] border border-[var(--color-border-dark)] rounded-lg overflow-hidden">
+          <img src="/thumbnails/miniatura de chifruit.jpg" alt="Chifruit work" class="w-full aspect-video object-cover" />
+        </div>
+        <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-[var(--color-accent)]/20 rounded-lg -z-10"></div>
+      </div>
+    </div>
+
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="card border border-[var(--color-border-dark)] rounded-lg p-5 text-center">
+        <span class="block text-3xl md:text-4xl font-bold text-[var(--color-accent)] font-mono">100K+</span>
+        <span class="muted text-sm mt-1 block">{lang === "es" ? "visitas generadas" : "views generated"}</span>
+      </div>
+      <div class="card border border-[var(--color-border-dark)] rounded-lg p-5 text-center">
+        <span class="block text-3xl md:text-4xl font-bold text-[var(--color-accent)] font-mono">200K+</span>
+        <span class="muted text-sm mt-1 block">{lang === "es" ? "subs del cliente" : "client subs"}</span>
+      </div>
+    </div>
+  </div>
+</section>

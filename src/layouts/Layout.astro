@@ -1,0 +1,70 @@
+---
+import "../styles/global.css";
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+}
+const { title, description, lang = "es" } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="dark" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <nav class="site-nav fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-[var(--color-border-dark)]">
+      <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold tracking-tight" style="font-family: var(--font-mono);">
+          <span class="text-[var(--color-accent)]">&gt;</span> uSamixFX
+        </a>
+        <div class="hidden md:flex items-center gap-7">
+          <a href="#gallery" class="muted hover:text-[var(--color-accent)] transition text-[13px] uppercase tracking-widest font-medium">{lang === "es" ? "Trabajos" : "Work"}</a>
+          <a href="#about" class="muted hover:text-[var(--color-accent)] transition text-[13px] uppercase tracking-widest font-medium">{lang === "es" ? "Sobre mi" : "About"}</a>
+          <a href="#contact" class="muted hover:text-[var(--color-accent)] transition text-[13px] uppercase tracking-widest font-medium">{lang === "es" ? "Contacto" : "Contact"}</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="nav-btn w-8 h-8 rounded-lg bg-[var(--color-surface-dark)] flex items-center justify-center text-sm hover:bg-[var(--color-accent)] hover:text-white transition-colors" aria-label="Toggle theme">
+            <span class="icon-sun hidden">☀</span>
+            <span class="icon-moon">☾</span>
+          </button>
+          <a href={lang === "en" ? "/es/" : "/"} class="nav-btn px-3 py-1.5 rounded-lg bg-[var(--color-surface-dark)] text-[12px] font-mono font-medium hover:bg-[var(--color-accent)] hover:text-white transition">{lang === "en" ? "ES" : "EN"}</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <script is:inline>
+      (function() {
+        const html = document.documentElement;
+        const saved = localStorage.getItem("theme") || "dark";
+        html.className = saved;
+        html.dataset.theme = saved;
+        const sun = document.querySelector('.icon-sun');
+        const moon = document.querySelector('.icon-moon');
+        function updateIcons() {
+          const isDark = html.className === 'dark';
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        }
+        updateIcons();
+        document.getElementById("theme-toggle").onclick = () => {
+          const next = html.className === "dark" ? "light" : "dark";
+          html.className = next;
+          html.dataset.theme = next;
+          localStorage.setItem("theme", next);
+          updateIcons();
+        };
+      })();
+    </script>
+  </body>
+</html>

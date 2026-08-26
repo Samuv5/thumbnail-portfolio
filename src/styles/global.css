@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-bg-dark: #0c0c0e;
+  --color-bg-light: #f5f5f0;
+  --color-surface-dark: #16161a;
+  --color-surface-light: #eaeaea;
+  --color-accent: #ff6b00;
+  --color-accent-hover: #ff8533;
+  --color-text-dark: #e8e8e8;
+  --color-text-light: #1a1a1a;
+  --color-muted-dark: #6b6b73;
+  --color-muted-light: #7a7a85;
+  --color-border-dark: #222228;
+  --color-border-light: #d4d4d4;
+}
+
+html {
+  font-family: var(--font-body);
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html.light {
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+html.light .site-nav {
+  background: rgba(245, 245, 240, 0.85);
+  border-color: var(--color-border-light);
+}
+
+html.light .site-nav .nav-btn {
+  background: var(--color-surface-light);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-border-light);
+}
+
+html.light .site-nav .nav-btn:hover {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+html.light .card {
+  background: var(--color-surface-light);
+  border-color: var(--color-border-light);
+}
+
+html.light .section-alt {
+  background: #e2e2dc;
+}
+
+html.light .btn-primary {
+  background: var(--color-accent);
+  color: white;
+}
+
+html.light .btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+html.light .btn-ghost {
+  border-color: var(--color-border-light);
+  color: var(--color-text-light);
+}
+
+html.light .btn-ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+html.light .muted {
+  color: var(--color-muted-light);
+}
+
+html.light .footer-bar {
+  border-color: var(--color-border-light);
+}
+
+html.light .tag {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--color-text-light);
+}
+
+html.light .glow {
+  display: none;
+}
+
+html.light #lightbox {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+html.light #lightbox-close,
+html.light #lightbox-prev,
+html.light #lightbox-next {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--color-text-light);
+}
+
+html.light #lightbox-close:hover,
+html.light #lightbox-prev:hover,
+html light #lightbox-next:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+html.light #lightbox-counter {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+html.light * {
+  scrollbar-color: #aaa transparent;
+}

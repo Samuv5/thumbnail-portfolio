@@ -1,12 +1,13 @@
 ---
 const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const base = import.meta.env.BASE_URL;
 const thumbnails = [
-  { src: "/thumbnails/New Project (11).png", alt: "Thumbnail Minecraft 4", span: "md:col-span-2" },
-  { src: "/thumbnails/New Project (1).png", alt: "Thumbnail Minecraft 1", span: "" },
-  { src: "/thumbnails/New Project (3).png", alt: "Thumbnail Minecraft 2", span: "" },
-  { src: "/thumbnails/New Project (4) (3).png", alt: "Thumbnail Minecraft 3", span: "" },
-  { src: "/thumbnails/miniatura de chifruit.jpg", alt: "Thumbnail Chifruit", span: "md:col-span-2" },
-  { src: "/thumbnails/uFywkZyPL5Q-HD.jpg", alt: "Thumbnail YouTube", span: "" },
+  { src: `${base}thumbnails/New Project (11).png`, alt: "Thumbnail Minecraft 4", span: "md:col-span-2" },
+  { src: `${base}thumbnails/New Project (1).png`, alt: "Thumbnail Minecraft 1", span: "" },
+  { src: `${base}thumbnails/New Project (3).png`, alt: "Thumbnail Minecraft 2", span: "" },
+  { src: `${base}thumbnails/New Project (4) (3).png`, alt: "Thumbnail Minecraft 3", span: "" },
+  { src: `${base}thumbnails/miniatura de chifruit.jpg`, alt: "Thumbnail Chifruit", span: "md:col-span-2" },
+  { src: `${base}thumbnails/uFywkZyPL5Q-HD.jpg`, alt: "Thumbnail YouTube", span: "" },
 ];
 ---
 

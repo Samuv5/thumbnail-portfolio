@@ -1,5 +1,6 @@
 ---
 const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="about" class="section-alt py-28 px-5">
@@ -26,7 +27,7 @@ const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
       </div>
       <div class="relative reveal" style="animation-delay:0.15s">
         <div class="card bg-[var(--color-surface-dark)] border border-[var(--color-border-dark)] rounded-lg overflow-hidden">
-          <img src="/thumbnails/miniatura de chifruit.jpg" alt="Chifruit work" class="w-full aspect-video object-cover" />
+          <img src={`${base}thumbnails/miniatura de chifruit.jpg`} alt="Chifruit work" class="w-full aspect-video object-cover" />
         </div>
         <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-[var(--color-accent)]/20 rounded-lg -z-10"></div>
       </div>

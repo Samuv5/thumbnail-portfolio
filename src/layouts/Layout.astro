@@ -6,6 +6,7 @@ interface Props {
   lang?: string;
 }
 const { title, description, lang = "es" } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -21,7 +22,7 @@ const { title, description, lang = "es" } = Astro.props;
   <body>
     <nav class="site-nav fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-[var(--color-border-dark)]">
       <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-        <a href="/" class="text-xl font-bold tracking-tight" style="font-family: var(--font-mono);">
+        <a href={base} class="text-xl font-bold tracking-tight" style="font-family: var(--font-mono);">
           <span class="text-[var(--color-accent)]">&gt;</span> uSamixFX
         </a>
         <div class="hidden md:flex items-center gap-7">
@@ -34,7 +35,7 @@ const { title, description, lang = "es" } = Astro.props;
             <span class="icon-sun hidden">☀</span>
             <span class="icon-moon">☾</span>
           </button>
-          <a href={lang === "en" ? "/es/" : "/"} class="nav-btn px-3 py-1.5 rounded-lg bg-[var(--color-surface-dark)] text-[12px] font-mono font-medium hover:bg-[var(--color-accent)] hover:text-white transition">{lang === "en" ? "ES" : "EN"}</a>
+          <a href={lang === "en" ? `${base}es/` : base} class="nav-btn px-3 py-1.5 rounded-lg bg-[var(--color-surface-dark)] text-[12px] font-mono font-medium hover:bg-[var(--color-accent)] hover:text-white transition">{lang === "en" ? "ES" : "EN"}</a>
         </div>
       </div>
     </nav>

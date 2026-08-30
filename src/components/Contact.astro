@@ -1,5 +1,5 @@
 ---
-const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const lang = Astro.url.pathname.includes("/es") ? "es" : "en";
 ---
 
 <section id="contact" class="py-28 px-5">

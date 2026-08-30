@@ -8,16 +8,16 @@ const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
   <div class="max-w-6xl mx-auto px-5 w-full pt-24">
     <div class="grid md:grid-cols-[1fr_auto] gap-12 items-end">
       <div>
-        <p class="font-mono text-[var(--color-accent)] text-sm mb-4 tracking-wide">{lang === "es" ? "// thumbnail maker" : "// thumbnail maker"}</p>
-        <h1 class="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.9] tracking-tighter mb-6">
+        <p class="reveal is-visible font-mono text-[var(--color-accent)] text-sm mb-4 tracking-wide" style="animation-delay:0s">{lang === "es" ? "// thumbnail maker" : "// thumbnail maker"}</p>
+        <h1 class="reveal is-visible text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.9] tracking-tighter mb-6" style="animation-delay:0.1s">
           uSamix<br/>FX
         </h1>
-        <p class="muted text-lg max-w-md leading-relaxed mb-8">
+        <p class="reveal is-visible muted text-lg max-w-md leading-relaxed mb-8" style="animation-delay:0.2s">
           {lang === "es"
             ? "Miniaturas que hacen click. Asi de simple."
             : "Thumbnails that get clicks. Simple as that."}
         </p>
-        <div class="flex flex-wrap gap-3">
+        <div class="reveal is-visible flex flex-wrap gap-3" style="animation-delay:0.3s">
           <a href="#gallery" class="btn-primary inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-accent)] text-white font-semibold rounded-lg transition-all hover:brightness-110">
             {lang === "es" ? "Ver trabajos" : "View work"}
             <span class="text-lg">→</span>
@@ -27,7 +27,7 @@ const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
           </a>
         </div>
       </div>
-      <div class="hidden md:block">
+      <div class="hidden md:block reveal is-visible" style="animation-delay:0.2s">
         <div class="relative w-[32rem] aspect-video">
           <img src="/thumbnails/New Project (11).png" alt="Thumbnail preview" class="w-full h-full object-cover rounded-lg shadow-2xl" />
           <div class="absolute -bottom-3 -right-3 w-full h-full border-2 border-[var(--color-accent)]/30 rounded-lg -z-10"></div>

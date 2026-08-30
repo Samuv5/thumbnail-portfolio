@@ -22,7 +22,8 @@ const thumbnails = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="gallery-grid">
       {thumbnails.map((thumb, i) => (
         <article
-          class={`card group relative overflow-hidden bg-[var(--color-surface-dark)] border border-[var(--color-border-dark)] cursor-pointer transition-all hover:border-[var(--color-accent)]/40 ${thumb.span}`}
+          class={`reveal card group relative overflow-hidden bg-[var(--color-surface-dark)] border border-[var(--color-border-dark)] cursor-pointer transition-all hover:border-[var(--color-accent)]/40 ${thumb.span}`}
+          style={`animation-delay:${(i % 3) * 0.1}s`}
           data-lightbox
           data-src={thumb.src}
           data-alt={thumb.alt}

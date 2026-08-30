@@ -4,14 +4,14 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <section class="min-h-screen flex items-center relative overflow-hidden">
-  <div class="glow absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-[var(--color-accent)] rounded-full blur-[200px] opacity-[0.07]"></div>
+  <div class="glow glow-float absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-[var(--color-accent)] rounded-full blur-[200px] opacity-[0.07]"></div>
 
   <div class="max-w-6xl mx-auto px-5 w-full pt-24">
     <div class="grid md:grid-cols-[1fr_auto] gap-12 items-end">
       <div>
         <p class="reveal is-visible font-mono text-[var(--color-accent)] text-sm mb-4 tracking-wide" style="animation-delay:0s">{lang === "es" ? "// thumbnail maker" : "// thumbnail maker"}</p>
         <h1 class="reveal is-visible text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.9] tracking-tighter mb-6" style="animation-delay:0.1s">
-          uSamix<br/>FX
+          uSamix<br/><span class="text-gradient">FX</span>
         </h1>
         <p class="reveal is-visible muted text-lg max-w-md leading-relaxed mb-8" style="animation-delay:0.2s">
           {lang === "es"
